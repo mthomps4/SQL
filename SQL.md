@@ -1,0 +1,62 @@
+SELECT * FROM books;
+- selects all* data from "books"
+
+SELECT * FROM <table name>;
+
+SELECT email FROM users;
+- gathers email column from users table
+
+SELECT email, first_name FROM users;
+- gather both firstname and email from table
+
+SELECT email AS E-mail FROM users;
+- gathers email from users table returns with title E-mail in column header
+
+SELECT first_published AS "First Published" FROM books;
+- gathers first_published data and outputs First Published column.
+
+"--" Comments in SQL
+
+WHERE <condition>
+SELECT title, author FROM books WHERE first_published = 1997;
+- returns title and author FROM "books" only published in 1997
+
+SELECT title, first_published FROM books WHERE author = "J.K. Rowling";
+- return all books by J.K Rowling
+- can also use the !=
+
+Operators
+- =
+- !=
+- <
+- >
+- <=
+- >=
+
+CONDITION
+- AND / OR
+SELECT title FROM books WHERE author = "J.K. Rowling" AND first_published < 2000;
+
+DATE
+"Year-MONTH-Day" "0000-00-00"
+- "2016-12-25"
+
+WHERE IN / NOT IN
+- WHERE <column> IN (value1, value2, value3);
+
+BETWEEN
+- WHERE <column> BETWEEN value AND value2;
+
+LIKE for patterns
+- SELECT title FROM books WHERE title LIKE "Harry Potter%";
+- % Wild Card is there something before or after
+- SELECT * FROM users WHERE first_name LIKE "L%";
+
+FOR BLANK VALUS
+- WHERE returned_on IS NULL;
+- NULL must use IS / IS NOT
+- SELECT * FROM phone_book WHERE phone IS NULL;
+
+MULTIPLE TABLES
+- SELECT * FROM <table1>, <table 2> WHERE <table1.<table 1 column> = <table2>.<table 2 column>;
+- SELECT * FROM loans, books WHERE loans.book_id = books.id; 
